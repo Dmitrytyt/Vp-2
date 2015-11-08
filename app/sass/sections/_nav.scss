@@ -1,0 +1,35 @@
+.navigation{
+  background: #fff;
+  border-bottom: solid 2px #ebedef;
+  margin-bottom: 32px;
+
+  .navigation__list{
+    font-size: 0;
+  }
+
+  .navigation__item {
+    display: inline-block;
+  }
+
+  .navigation__link{
+    text-decoration: none;
+    color: #333;
+    display: inline-block;
+    padding: 16px 16px;
+    font-size: 16px;
+    &:hover {
+      background: #e4e2e2;
+    }
+  }
+
+  .navigation__item_active {
+    background: $first-color;
+    .navigation__link{
+      color: #fff;
+      font-family: open_sanssemibold;
+      &:hover {
+            background: $first-color;
+          }
+    }
+  }
+}

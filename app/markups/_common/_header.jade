@@ -1,0 +1,18 @@
+header.header
+	include _top-header
+
+	.container
+		.header__logo
+			a.header__logo__link(href="/", title="На главную")
+				img.header__logo__item(src="img/logo.png", alt="Cooltech - Магазин электроники")
+
+		.header__important-links
+			ul.important-links__list
+				- var links = ['Карта проезда', 'История заказов', 'Корзина']
+				each link, ind in links
+					li(class="important-links__item ")
+						a(href="#" class="important-links__link " + ((0 == ind) ? 'important-links__item_active' : ''))= link
+
+		.header__search
+			input.header__search__in(placeholder="Что будем искать?")
+			button.header__search__action(type="submit" class="search__button") Найти

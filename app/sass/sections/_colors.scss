@@ -1,0 +1,48 @@
+.colors {
+  .island__list {
+    padding-left: 29px;
+    padding-right: 29px;
+  }
+
+  .island__list__link {
+    padding: 0;
+  }
+
+  .colors__item {
+    display: inline-block;
+    margin-right: 22px;
+        margin-bottom: 22px;
+  }
+
+  input[type="checkbox"] + label .colors_link_item {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    border: solid 1px #dee1e4;
+  }
+
+
+  input[type="checkbox"]:checked + label .colors_link_item {
+    @include box-shadow(0px 0px 1px 2px $first-color);
+  }
+
+  $colors: (('#fff','white'),
+            ('#ccc','coffee-milk'),
+            ('#000','black'),
+            ('#0a3153','dark-blue'),
+            ('#ff1800','red'),
+            ('#fff343','yellow'),
+            ('#fb914a','orange'),
+            ('#92c37c','green'),
+            ('#40a6ff','blue'),
+            ('#9870ad','lilac'),
+            ('#dc78ad','purple'),
+            ('#ab8671','dark-red'));
+
+  @each $ind,$color in $colors {
+    input[type="checkbox"] + label .colors_link_item.#{$color} {
+      background-color: #{$ind};
+    }
+  }
+
+}

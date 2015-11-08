@@ -1,0 +1,23 @@
+.main-filter {
+  .main-filter__item {
+    border-bottom: solid 1px #dee1e4;
+    &:last-child {
+      border-bottom: 0;
+    }
+  }
+  .main-filter__link {
+    display: block;
+    padding: 18px 29px;
+    color: #7f7f7f;
+    font-size: 14px;
+    line-height: 14px;
+    text-decoration: none;
+  }
+
+  .main-filter__item_active {
+    .main-filter__link {
+      background: #d9e5ea;
+      color: #5d656c;
+    }
+  }
+}

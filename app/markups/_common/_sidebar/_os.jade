@@ -1,0 +1,20 @@
+.island__item.os
+    .os__title
+        a.island__link(href="#")
+            | Операционные системы
+    .island__content
+        ul.island__list
+            - var checkboxes = ['Android', 'iOS', 'Windows Mobile', 'Symbian', 'Custom']
+            - var status   = [true, true, true, true, false]
+            - var disabled = [false, false, false, true, false]
+                each link, ind in checkboxes
+                    - var ch = ((status[ind]) ? true : false)
+                    - var ds = ((disabled[ind]) ? true : false)
+                    li.os__item
+                        input.orange-style(id=link+ind, name=link, type="checkbox", value="1", checked=ch, disabled=ds)
+                        label.island__list__link(for=link+ind)
+                            span
+                            | #{link}
+        a.island__reset(href="#")
+            | Сбросить фильтр
+    i.island__item__action

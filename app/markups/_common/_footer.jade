@@ -1,0 +1,22 @@
+footer.footer
+    .container
+        .footer__content
+            .footer__logo
+                a(href='/', title='Мир электроники')
+                    img(src="img/logo-white.png", alt="COOLTECH")
+            ul.footer__socials__list
+                - var socials = ['vk', 'fb', 'tw']
+                each social in socials
+                    li.footer__socials__item
+                        a(href="#" class="footer__socials__link footer__socials__link_" + social)
+                            i.hide
+                                | #{social}
+            .hot-links
+                ul.hot-links__list
+                    - var lists = ['Планшеты', 'Мобильные телефоны', 'Mp3 плееры', 'Персональные компьютеры', 'Ноутбуки', 'Аксессуары', 'Бытовая техника']
+                    each link in lists
+                        li.hot-links__item
+                            a.hot-links__link(href="#")=link
+            .footer__copyright
+                | &copy; 2015 All right reserved. Allow no copy.
+    .footer__line

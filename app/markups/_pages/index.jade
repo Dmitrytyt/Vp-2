@@ -1,0 +1,77 @@
+extends ../main
+
+block title
+    | CoolTech - мобильные телефоны
+
+block h1
+    h1.title-page
+        | Мобильные телефоны
+
+block content
+    ul.product-catalog
+        - var articles = ['189238', '283135', '345328', '589338', '387228', '359110', '422105', '112234', '187537']
+        - var models   = ['Samsung GT-|9301| GALAXY S 3', 'Microsoft Lumia 640 RM-1077', 'Archos 50 Oxygen Plus', 'Philips S398 Black', 'Microsoft Lumia 430 RM-1099', 'Senseit L301 black', 'HIGHSCREEN WinWin Black', 'Alcatel OT4013D PIXI 3 (2 SIM)', 'Fly IQ434 Era Nano 5']
+        - var prices   = ['11 290', '10 990', '9 900', '8990', '5 390', '4 990', '3 990', '3 290', '1 790']
+        each link, ind in articles
+            li.product-catalog__item
+                .product-catalog__article
+                    .product-catalog__photos
+                        .product-catalog__main-photo
+                            a.product-catalog__main-photo__link(href="#")
+                                img.main-photo(src="/img/phones/phone.png")
+
+                        ul.list-photo
+                            - var photos = ['1.jpg', '2.jpg', '3.jpg']
+                            each name, ind in photos
+                                - var active = ((ind === 0) ? 'list-photo__item_active' : '')
+                                li(class="list-photo__item " + active)
+                                    a.list-photo__link(href="#")
+                                        img.list-photo__tmb(src="/img/phones/tmb/" + name, data-img="/img/phones/" + name)
+
+
+                    span.product-catalog__article_muted
+                        | Артикул #{' '}
+                    | #{link}
+                .product-catalog__content
+                    a.product-catalog__link(href="#")
+                        h2.product-catalog__title
+                            span.product-catalog__type
+                                | Смартфон
+                            | #{' ' + models[ind]}
+                    p.product-catalog__description
+                        | Смартфон Samsung GT-|9301|GALAXY S 3 Ceramic White Моноблок,
+                        | Micro-SIM, Android 4.4, 3G Bluetooth 4.0, EDGE, GPRS, WAP, Wi-FI,
+                        | Количество ядер процессора 4, Частота процессора 1400 МГц...
+
+                    .product-catalog__param
+                        - var params = {'Тип SIM-карты': 'Micro-SIM', 'Количество SIM-карт': 1, 'Цвет': 'Белый', 'ОС': 'Android', 'Связь 3G': 'Есть', '4G(LTE)': 'Нет', 'GPS-модуль': 'Есть'}
+                        each param, ind in params
+                            .product-catalog__param__item
+                                .product-catalog__param__first
+                                    | #{ind}
+                                .product-catalog__param__two
+                                    | #{param}
+
+                    ul.product-catalog__stars
+                        - var stars = ['star-full', 'star-full', 'star-full', 'star-full', 'star']
+                        each star, ind in stars
+                            li.product-catalog__stars__item
+                                a.product-catalog__status__link(href="#")
+                                    i(class="icon " + star)
+
+                    span.product-catalog__badge-wrap
+                        i.product-catalog__badge
+                            | 4
+
+                .product-catalog__info-price
+                    .product-catalog__price
+                        | #{prices[ind]}
+                        i.icon-ruble
+                    .product-catalog__status
+                        i.icon-dot
+                        | В наличии
+                    .product-catalog__action
+                        button.product-catalog__action_link(href="#")
+                            | В корзину
+    include ../_common/_pagination
+

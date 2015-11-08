@@ -1,0 +1,20 @@
+.island__item.brend
+    .brend__title
+        a.island__link(href="#")
+            | Бренды
+    .island__content
+        ul.island__list
+            - var checkboxes = ['Lenovo', 'Apple', 'Samsung', 'Asus', 'Motorola']
+            - var status   = [true, true, true, true, false]
+            - var disabled = [false, false, false, true, false]
+                each link, ind in checkboxes
+                    - var ch = ((status[ind]) ? true : false)
+                    - var ds = ((disabled[ind]) ? true : false)
+                    li.brend__item
+                        input.brend__check.orange-style(id=link+ind, name=link, type="checkbox", value="1", checked=ch, disabled=ds)
+                        label.island__list__link(for=link+ind)
+                            span
+                            | #{link}
+        a.island__reset(href="#")
+            | Сбросить фильтр
+    i.island__item__action

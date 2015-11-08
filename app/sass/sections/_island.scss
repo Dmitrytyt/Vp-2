@@ -1,0 +1,83 @@
+.island {
+    background: #fff;
+    border: solid 1px #dee1e4;
+    margin-bottom: 38px;
+    @include border-radius();
+
+    .island__item {
+        position: relative;
+        border-bottom: solid 1px #dee1e4;
+        outline: none;
+
+        &:last-child {
+          border-bottom: 0;
+        }
+
+        .island__item__action {
+            position: absolute;
+            top:19px;
+            right: 11px;
+            cursor: pointer;
+            @include get-sprite($font-icon, arrow-sidebar);
+        }
+    }
+
+    .island__item_closed {
+        &:hover{
+            .island__item__action {
+                opacity: 1;
+                @include transition(all 0.1s ease-out 0.1s);
+            }
+        }
+        .island__link {
+            font-size: 14px;
+            color: #333;
+            &:hover {
+                background: #D9E5EA;
+                font-size: 16px;
+            }
+            @include transition(all 0.1s ease-out 0.1s);
+        }
+        .island__content {
+            display: none;
+        }
+        .island__item__action {
+            opacity: 0;
+            @include get-sprite($font-icon, arrow-sidebar-down);
+            @include transition(all 0.1s ease-out 0.1s);
+        }
+    }
+
+    .island__item_active {
+        .island__link {
+            background: #D9E5EA;
+            font: 16px open_sanssemibold;
+            padding-top: 14px;
+            padding-bottom: 22px;
+        }
+    }
+
+    .island__link {
+        display: block;
+        padding: 18px 29px;
+        color: #333;
+        font: 16px open_sanssemibold;
+        line-height: 14px;
+        height: 14px;
+        text-decoration: none;
+    }
+
+    .island__list__link {
+        display: block;
+        padding: 9px 29px;
+        cursor: pointer;
+        input{
+            outline: none;
+        }
+    }
+
+    .island__reset{
+        display: block;
+        padding: 9px 29px 18px 29px;
+    }
+}

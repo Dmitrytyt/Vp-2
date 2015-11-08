@@ -1,0 +1,38 @@
+.breadcrumbs {
+  font-size: 0;
+  margin-bottom: 30px;
+
+  .breadcrumbs__item {
+    @include inlineblock;
+    font-size: 12px;
+    &:after {
+      content: ">";
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+
+    &:first-child {
+      .breadcrumbs__link {
+        text-decoration: none;
+      }
+    }
+
+    &:last-child {
+      &:after {
+        content: " ";
+      }
+    }
+  }
+
+  .breadcrumbs__link {
+    color: #333;
+    text-decoration: underline;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  .breadcrumbs__link_active {
+    color: $first-color;
+  }
+}

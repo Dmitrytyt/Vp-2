@@ -1,0 +1,15 @@
+.island__item.island__item_closed.availability
+    .availability__title
+        a.island__link(href="#")
+            | Наличие в магазинах
+    .island__content
+        ul.island__list
+            - var radios = {'all-shop' : 'Во всех магазинах', 'tome' : 'В ближайшем ко мне магазине'}
+                each link, ind in radios
+                    - var ch = ((ind == 'tome') ? true : false)
+                    li.availability__item
+                        input.orange-style(id=ind, name="availability", type="radio", value="1", checked=ch)
+                        label.island__list__link(for=ind)
+                            span
+                            | #{' '+link}
+    i.island__item__action

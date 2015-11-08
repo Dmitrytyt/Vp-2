@@ -1,0 +1,14 @@
+.island__item.colors
+    .colors__title
+        a.island__link(href="#")
+            | Цвета
+    .island__content
+        ul.island__list
+            - var colors = ['white', 'coffee-milk', 'black', 'dark-blue', 'red', 'yellow', 'orange', 'green', 'blue', 'lilac', 'purple', 'dark-red']
+                each link, ind in colors
+                    - var ch = ((1 == ind) ? true : false)
+                    li.colors__item
+                        input(class="colors__check colors__" +link, id=link+ind, name=link, type="checkbox", value="1", checked=ch)
+                        label.island__list__link(for=link+ind)
+                            span.colors_link_item(class=link)
+    i.island__item__action

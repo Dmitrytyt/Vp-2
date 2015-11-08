@@ -1,0 +1,177 @@
+/* --------- adjustment --------- */
+
+$container-width    : 1100px;
+$footer-height      : 50px;
+$body-font          : open_sansregular, Arial, Helvetica, sans-serif;
+$first-color        : #ff6600;
+$font-icon: sprite-map('font-icon/*.png', $spacing: 10px);
+
+html {
+	width:100%;
+	height:100%;
+	font-size: 100.01%;
+}
+
+body {
+	font: 14px/1.41 $body-font;
+    -webkit-font-smoothing: antialiased;
+	width:100%;
+	height:100%;
+    background: #f4f4f4;
+}
+
+.container {
+    width: $container-width;
+    margin: 0 auto;
+    position: relative;
+}
+
+.wrapper {
+    position: relative;
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    overflow: hidden;
+    min-width: $container-width + 20;
+
+    &:after {
+	    display: block;
+        position: relative;
+        height: $footer-height;
+    }
+
+    .content-wrapper {
+        .title-page {
+            font: 20px open_sansbold;
+            line-height: 16px;
+            margin:0 0 30px 0;
+            padding:0;
+        }
+
+        .content {
+            position: relative;
+            @include clearfix;
+            .sidebar {
+                float: left;
+                width: 333px;
+            }
+
+            .content__inner {
+                float: right;
+                width: 743px;
+            }
+        }
+
+    }
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+a {
+    color: #5db2fc;
+    &:hover {
+        text-decoration: none;
+    }
+
+    &:focus {
+        outline: none;
+    }
+}
+
+ul, ol {
+    padding: 0;
+    margin: 0;
+	list-style: none outside none;
+
+	li {
+        padding: 0;
+        left: 0;
+    }
+}
+
+p {
+    padding: 0;
+    margin: 0;
+}
+
+.hide {
+    display: none;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  display: none;
+}
+
+$checks-map: sprite-map('checks/*.png', $spacing: 10px);
+
+  input[type="checkbox"].orange-style + label span {
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: top;
+    margin-top:1px;
+    margin-right: 10px;
+    @include get-sprite($checks-map, box-check-disable);
+  }
+
+  input[type="checkbox"].orange-style:checked + label span {
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: top;
+    margin-top:1px;
+    margin-right: 10px;
+    @include get-sprite($checks-map, box-check);
+  }
+
+input[type="radio"].orange-style + label span {
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: top;
+    margin-top:1px;
+    margin-right: 10px;
+    @include get-sprite($checks-map, radio-disabled);
+  }
+
+  input[type="radio"].orange-style:checked + label span {
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: top;
+    margin-top:1px;
+    margin-right: 10px;
+    @include get-sprite($checks-map, radio-check);
+  }
+
+.seo-content {
+  margin-bottom: 30px;
+  text-align: justify;
+
+  .seo-content__item {
+    margin-bottom: 25px;
+  }
+
+  .first.column {
+    .seo-content__item {
+      padding-right: 20px;
+    }
+  }
+
+  .last.column {
+    .seo-content__item {
+      padding-left: 20px;
+    }
+  }
+}
+
+.seo-content__title {
+    font-family: open_sansbold;
+    font-size: 20px;
+  }
+
+footer {
+  height: 220px;
+  position: relative;
+  background: url('/img/footer-bg.png') repeat left top;
+}

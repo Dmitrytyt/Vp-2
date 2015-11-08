@@ -1,0 +1,74 @@
+.footer__content {
+  height: 220px;
+  .footer__logo{
+    position: absolute;
+    top:71px;
+    left:0;
+  }
+
+  .footer__socials__list {
+   position: absolute;
+    top: 35px;
+    right: 0;
+
+    $socials: (vk,vk-hover), (tw,tw-hover), (fb,fb-hover);
+    $socials-map: sprite-map('big-icon/*.png', $spacing: 10px);
+
+    @each $social,$hover in $socials {
+    	.footer__socials__link_#{$social} {
+    		@include get-sprite($socials-map, $social);
+            display: inline-block;
+
+    	  &:hover {
+    		@include get-sprite($socials-map, $hover);
+    		transition: all 0.2s ease-in-out 0s;
+    	  }
+    	}
+    }
+  }
+
+  .footer__socials__item {
+    display: inline-block;
+    margin-left: 27px;
+    &:first-child{
+      margin-left: 0;
+    }
+  }
+
+  .hot-links__list {
+    position: absolute;
+    top: 110px;
+    right: 0;
+    width: 570px;
+    text-align: right;
+    .hot-links__item {
+      display: inline-block;
+      margin-left: 25px;
+      margin-bottom: 23px;
+
+      .hot-links__link {
+        color: #fff;
+      }
+    }
+  }
+
+  .footer__copyright {
+    position: absolute;
+    bottom: 8px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: #fff;
+    font-size:12px;
+    line-height: 12px;
+  }
+
+}
+
+.footer__line {
+    height: 28px;
+    border-top: solid 1px #494949;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}

@@ -1,0 +1,74 @@
+include _common/_mixins
+
+doctype html
+html(lang="ru-RU")
+	head
+		meta(charset="UTF-8")
+		meta(http-equiv="X-UA-Compatible" content="IE=edge")
+		meta(name="viewport" content="width=device-width, initial-scale=1")
+		title
+			block title
+		meta(name="description" content="Портфолио от Dmitrytyt")
+		meta(name="keywords" content="dmitrytyt, работы от dmitrytyt")
+		meta(name="author" content="Dmitrytyt")
+		+favicon("/img/favicon/")
+		link(rel="stylesheet" type='text/css' href="/css/main.css")
+		link(rel="stylesheet" type='text/css' href="bower/select2/dist/css/select2.min.css")
+		link(rel="stylesheet" type='text/css' href="bower/jquery-ui/themes/smoothness/jquery-ui.min.css")
+		script(src="/bower/modernizer/modernizr.js")
+
+	body
+		.wrapper
+			.maincontent
+
+				include _common/_header
+
+				+nav('navigation', ['Планшеты', 'Мобильные телефоны', "Mp3 плееры", "Персональные компьютеры", "Ноутбуки", "Аксессуары", "Бытовая техника"], 1)
+
+				.content-wrapper
+					.container
+						include _common/_breadcrumb
+						block h1
+
+						.content
+							include _common/_aside
+
+							.content__inner
+								include _common/_filter-content
+								block content
+
+						h2.seo-content__title
+							| Важная информация
+						.seo-content
+							p.seo-content__item
+								| Повседневная   практика   показывает ,  что   сложившаяся   структура   организации
+								| представляет  собой  интересный эксперимент проверки дальнейших направлений прогрессивного развития.
+							p.seo-content__item
+								| Идейные соображения высшего порядка, а также новая модель организационной деятельности
+								| в значительной степени обусловливает состояние новых предложений по дальнейшему совершенствованию.
+								|Наш разнообразный и богатый опыт и дальнейшее развитие различных форм самодеятельности
+								| способствует подготовке и реализации соответствующих условий реализации.
+							p.seo-content__item
+								| Как уже отмечалось в предыдущем докладе, консультация с широким активом позволяет
+								| выполнить важные задания по разработке позиций, занимаемых участниками в отношении
+								| поставленных задач. Значимость этих проблем настолько очевидна, что начало  повседневной
+								| работы по формированию позиции  влечет   за   собой   процесс  внедрения и модернизации
+								| созданной модели ускоренного развития. Не следует, однако, забывать, что укрепление
+								| и развитие  структуры  требует от нас соответствующего анализа эффективных форм
+								| непосредственного воздействия. Таким образом, реализация намеченных плановых заданий
+								| играет важную роль в формировании системы постоянного участия широких масс.
+							p.seo-content__item
+								| Задача  организации , в особенности же рамки и место обучения кадров нуждается в дальнейшем
+								| определении и уточнении существующих финансовых и административных положений.
+								| С другой стороны, постоянный количественный рост сферы нашей активности обеспечивает
+								| участие большого круга специалистов в формировании системы обучения кадров, соответствующей
+								| насущным потребностям. Из вышеизложенного очевидно, что постоянное информационно-пропагандистское
+								| обеспечение позволяет точнее оценить значение адекватных условий активизации нашей деятельности.
+
+		include _common/_footer
+
+		script(src="bower/jquery/dist/jquery.min.js")
+		script(src="bower/select2/dist/js/select2.min.js")
+		script(src="bower/jquery.columnizer/src/jquery.columnizer.min.js")
+		script(src="bower/jquery-ui/jquery-ui.min.js")
+		script(src="/js/main.js")

@@ -1,0 +1,62 @@
+.price {
+  .island__content {
+    color: #333;
+    padding: 9px 29px 18px;
+    @include clearfix();
+
+    .price__item-from {
+      float: left;
+    }
+
+    .price__item-to {
+      float: right;
+    }
+
+    .price__price-from,
+    .price__price-to {
+      padding-left: 9px;
+      padding-right: 9px;
+      margin-left: 14px;
+      width: 79px;
+      height: 27px;
+      border: solid 1px #ebedef;
+      font-family: open_sanssemibold, sans-serif;
+      color: #333;
+      @include border-radius(3px);
+      @include box-shadow(inset 0px 1px 2px -1px rgba(148,148,148,0.43));
+      }
+
+    .clearfix {
+      margin-bottom: 18px;
+      @include clearfix();
+    }
+
+    .slider-range {
+      margin-bottom: 18px;
+      .slider-range__item {
+        &.ui-widget-content {
+          background: #dee1e4;
+          border: none;
+          height: 3px;
+
+          .ui-widget-header{
+            background: $first-color;
+          }
+
+          .ui-state-default{
+            border: 0;
+            @include get-sprite($font-icon, price-arrow);
+            @include border-radius(0px);
+            &.ui-slider-handle {
+              margin-left: -4px;
+              top: 3px;
+            }
+          }
+
+        }
+      }
+      }
+  }
+
+
+}

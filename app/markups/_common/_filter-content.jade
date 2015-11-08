@@ -1,0 +1,18 @@
+.filter-content
+    .filter-content__sort
+        | Сортировать по
+        select.filter-content__list
+            option.filter-content__item
+                | по цене
+            option.filter-content__item
+                | по названию
+    .filter-content__view-catalog
+        .filter-content__view-catalog__title
+            | Вид каталога
+        - var icons = ['full-list', 'tile', 'list']
+        ul.view-catalog__list
+            each link, ind in icons
+                li.view-catalog__item
+                    - var active = ((ind === 2) ? 'view-catalog__link_active' : '')
+                    a(class="view-catalog__link " + active, href="#")
+                        i.icon(class="icon-"+link)

@@ -1,0 +1,6 @@
+.island.main-filter
+    ul.main-filter__list
+        - var links = ['Флагманы', 'Бюджетная линейка']
+        each link, ind in links
+            li(class="main-filter__item " + ((1 == ind) ? 'main-filter__item_active' : ''))
+                a.main-filter__link(href="#")= link
